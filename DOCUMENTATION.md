@@ -3,7 +3,7 @@
 > **CodeWIX** is an AI-powered code generation platform. Describe your idea and let AI build your website, web app, or mobile app. Built with Next.js 16 + Supabase + Cloudflare Workers, with multi-provider AI (Google Gemini for Chat, Cerebras + OpenRouter for Agent/Build).
 >
 > **Live site:** https://codewix.in
-> **Repo:** https://github.com/mfssecrets/CODEWIX-APP
+> **Repo:** https://github.com/codewith-akhil/codewix
 
 ---
 
