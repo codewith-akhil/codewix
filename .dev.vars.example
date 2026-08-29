@@ -1,0 +1,44 @@
+# ============================================================
+# CodeWIX — Environment Variables
+# ============================================================
+# Local dev : copy to .dev.vars (wrangler) — these are loaded as Worker env.
+# Production: set as Cloudflare secrets/vars (see "Cloudflare env vars" list).
+# NEVER commit real secrets. .env.local / .dev.vars are gitignored.
+# ============================================================
+
+# ---- Supabase (REQUIRED) ----
+# Auth (email OTP), Postgres database, Storage.
+NEXT_PUBLIC_SUPABASE_URL=https://YOUR-PROJECT.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_ANON_KEY
+SUPABASE_SERVICE_ROLE_KEY=YOUR_SERVICE_ROLE_KEY          # server-only secret (bypasses RLS)
+
+# ---- AI: Chat mode — Google Gemini (server-side ONLY) ----
+# Powers the Chat workspace. Users pick a Gemini model from the picker.
+GEMINI_API_KEY=YOUR_GEMINI_API_KEY
+GEMINI_DEFAULT_MODEL=gemini-3.6-flash
+
+# ---- AI: Agent/Build mode — Cerebras + OpenRouter (server-side ONLY) ----
+# Powers the Agent + Build Studio (coding models). Users pick from the
+# coding-model picker. Both are OpenAI-compatible APIs.
+CEREBRAS_API_KEY=YOUR_CEREBRAS_API_KEY
+OPENROUTER_API_KEY=YOUR_OPENROUTER_API_KEY
+
+# ---- Resend (transactional email, REQUIRED) ----
+# Used for the welcome email on signup. Supabase Auth OTP emails are sent by
+# Supabase using your configured Resend SMTP settings (Supabase dashboard).
+RESEND_API_KEY=re_YOUR_RESEND_KEY
+RESEND_FROM_EMAIL=CodeWIX <noreply@codewix.in>
+
+# ---- App ----
+NEXT_PUBLIC_SITE_URL=https://codewix.in
+DOMAIN=CODEWIX.IN
+NODE_ENV=production
+
+# ---- Razorpay (billing) — LIVE keys ----
+# Set these as Cloudflare secrets (encrypted). The key_id is also returned to
+# the browser for Razorpay checkout; the key_secret stays server-only.
+RAZORPAY_KEY_ID=YOUR_RAZORPAY_LIVE_KEY_ID
+RAZORPAY_KEY_SECRET=YOUR_RAZORPAY_LIVE_KEY_SECRET
+
+# ---- Encryption (legacy per-user key obfuscation; keep a stable 32-char value) ----
+ENCRYPTION_KEY=your-32-char-encryption-key
