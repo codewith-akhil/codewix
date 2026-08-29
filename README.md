@@ -1,0 +1,2 @@
+# codewix
+A vibecoding app
